@@ -1,0 +1,9 @@
+.contianer{
+    position: fixed;
+    height: 400px;
+    width: 200px;
+    background: white;
+    opacity: 0.75;
+    left: 100px;
+    top: 100px;
+}
