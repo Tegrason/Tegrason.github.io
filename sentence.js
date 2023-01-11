@@ -1,4 +1,3 @@
-
-window.onload = function(){
-    console.log("1111111");
-}
+$(function(){
+    console.log(1111111);
+})
