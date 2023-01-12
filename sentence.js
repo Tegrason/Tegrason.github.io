@@ -27,6 +27,8 @@ let cyclicTitleSentence = function(array){
     let offset = data.index;
     let sentence = array[offset];
     $(".sentence-content").text(sentence);
+    $(".sentence-content").addClass("sentence-content-flash");
+    $(".sentence-content").removeClass("sentence-content-flash");
     data.index++;
 }
 
@@ -52,14 +54,14 @@ $(function(){
 
     //计算容器X位置
     resize();
-    
-     cyclicTitleSentence(data.sentenceArray);
+
+    cyclicTitleSentence(data.sentenceArray);
 
     //轮播诗句
     setInterval(function () {
         cyclicTitleSentence(data.sentenceArray);
     },6000)
-    
+
     //监听窗口变化
     listensWindowsResize();
 })
