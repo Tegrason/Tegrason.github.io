@@ -18,15 +18,6 @@ let addLayout = function () {
     let sentenceDiv = "<p class='sentence'><span class='sentence-content'></span></p>";
     container = container.replace("${content}",sentenceDiv);
     $("body").append(container);
-
-    //计算容器位置
-    let targetContainer = $("body");
-    let selfContainer = $(".container");
-    let selfWidth = $(selfContainer).width();
-    let y = $(targetContainer).height();
-    let x = $(targetContainer).width();
-    x = (x - selfWidth) / 2;
-    $(selfContainer).css("left",x);
 }
 
 let cyclicTitleSentence = function(array){
@@ -39,9 +30,34 @@ let cyclicTitleSentence = function(array){
     data.index++;
 }
 
+let resize = function () {
+    //计算容器位置
+    let targetContainer = $("body");
+    let selfContainer = $(".container");
+    let selfWidth = $(selfContainer).width();
+    let y = $(targetContainer).height();
+    let x = $(targetContainer).width();
+    x = (x - selfWidth) / 2;
+    $(selfContainer).css("left",x);
+}
+
+let listensWindowsResize = function () {
+    $(window).resize(function () {
+        resize();
+    })
+}
 $(function(){
+    //初始化根容器并添加布局
     addLayout();
+
+    //计算容器X位置
+    resize();
+
+    //轮播诗句
     setInterval(function () {
         cyclicTitleSentence(data.sentenceArray);
     },6000)
+    
+    //监听窗口变化
+    listensWindowsResize();
 })
