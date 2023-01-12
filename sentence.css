@@ -1,9 +1,8 @@
 .container{
     position: fixed;
-    height: 400px;
-    width: 200px;
-    background: white;
+    height: 50px;
+    width: 450px;
     opacity: 0.75;
-    top: 100px;
+    top: 0;
     z-index: 999;
 }
