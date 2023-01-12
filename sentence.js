@@ -5,16 +5,17 @@ let data = {
 }
 
 
-
+//添加诗句容器载体
 let addLayout = function () {
-
-    //添加诗句容器载体
     let container = "<div class='container'>${content}</div>";
     let sentenceDiv = "<p class='sentence'><span class='sentence-content'></span></p>";
+
+    //替换元素
     container = container.replace("${content}",sentenceDiv);
     $("body").append(container);
 }
 
+//轮播诗句
 let cyclicTitleSentence = function(array){
     if(data.index >= array.length){
         data.index = 0;
@@ -27,8 +28,8 @@ let cyclicTitleSentence = function(array){
     data.index++;
 }
 
+//计算容器位置
 let resize = function () {
-    //计算容器位置
     let targetContainer = $("body");
     let selfContainer = $(".container");
     let selfWidth = $(selfContainer).width();
@@ -38,12 +39,14 @@ let resize = function () {
     $(selfContainer).css("left",x+50);
 }
 
+//监听窗口改变
 let listensWindowsResize = function () {
     $(window).resize(function () {
         resize();
     })
 }
 
+//获取远程资源
 let acquireResource = function (callback) {
     $.get(
         data.uriResource,
@@ -56,6 +59,7 @@ let acquireResource = function (callback) {
     )
 }
 
+//initialization
 $(function(){
     //初始化根容器并添加布局
     addLayout();
