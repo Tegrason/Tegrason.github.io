@@ -4,10 +4,10 @@ let addLayout = function () {
     let container = "<div class='container'>${content}</div>";
     let sentenceDiv = "<p class='sentence'><span class='sentence-content'>三十年众生牛马，六十年诸佛龙象</span></p>";
     container = container.replace("${content}",sentenceDiv);
-    $("#blog_panel").append(container);
+    $("body").append(container);
 
     //计算容器位置
-    let targetContainer = $("#blog_panel");
+    let targetContainer = $("body");
     let selfContainer = $(".container");
     let y = $(targetContainer).height();
     let x = $(targetContainer).width();
