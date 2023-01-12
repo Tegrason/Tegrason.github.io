@@ -35,7 +35,7 @@ let resize = function () {
     let y = $(targetContainer).height();
     let x = $(targetContainer).width();
     x = (x - selfWidth) / 2;
-    $(selfContainer).css("left",x);
+    $(selfContainer).css("left",x+50);
 }
 
 let listensWindowsResize = function () {
