@@ -44,12 +44,13 @@ let listensWindowsResize = function () {
     })
 }
 
-let acquireResource = function () {
+let acquireResource = function (callback) {
     $.get(
         data.uriResource,
         null,
         function(res){
-            console.log((data.sentenceArray = res.array));
+            data.sentenceArray = res.array;
+            callback();
         },
         "json"
     )
@@ -59,18 +60,18 @@ $(function(){
     //初始化根容器并添加布局
     addLayout();
 
-    //
-    acquireResource();
+    //获取远程资源
+    acquireResource(function(){
+        cyclicTitleSentence(data.sentenceArray);
+
+        //轮播诗句
+        setInterval(function () {
+            cyclicTitleSentence(data.sentenceArray);
+        },6000)
+    });
 
     //计算容器X位置
     resize();
-
-    cyclicTitleSentence(data.sentenceArray);
-
-    //轮播诗句
-    setInterval(function () {
-        cyclicTitleSentence(data.sentenceArray);
-    },6000)
 
     //监听窗口变化
     listensWindowsResize();
