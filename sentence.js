@@ -26,8 +26,8 @@ let cyclicTitleSentence = function(array){
     }
     let offset = data.index;
     let sentence = array[offset];
-    $(".sentence-content").text(sentence);
     $(".sentence-content").addClass("sentence-content-flash");
+    $(".sentence-content").text(sentence);
     $(".sentence-content").removeClass("sentence-content-flash");
     data.index++;
 }
