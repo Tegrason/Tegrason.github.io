@@ -45,9 +45,6 @@ let listensWindowsResize = function () {
 }
 
 let acquireResource = function () {
-    $.get("/openBidChat/releaseNotices/" + currentProjectId, null, function (res) {
-        $("#notice-ul-id").html(res);
-    }, "HTML")
     $.get(
         data.uriResource,
         null,
