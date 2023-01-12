@@ -32,7 +32,7 @@ let cyclicTitleSentence = function(array,index){
     let sentence = array[offset];
     $(".sentence-content").text(sentence);
     setInterval(function () {
-        cyclicTitleSentence(array,index);
+        cyclicTitleSentence(array,++index);
     },3000)
 }
 
