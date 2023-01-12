@@ -11,7 +11,7 @@ let addLayout = function () {
     let selfContainer = $(".container");
     let y = $(targetContainer).height();
     let x = $(targetContainer).width();
-    x = (x - selfContainer) / 2;
+    //x = (x - selfContainer) / 2;
     console.log(x);
     $(selfContainer).css("left",x);
 }
