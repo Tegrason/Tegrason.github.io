@@ -52,6 +52,8 @@ $(function(){
 
     //计算容器X位置
     resize();
+    
+     cyclicTitleSentence(data.sentenceArray);
 
     //轮播诗句
     setInterval(function () {
