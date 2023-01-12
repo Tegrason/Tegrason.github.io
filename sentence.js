@@ -61,6 +61,7 @@ let acquireResource = function (callback) {
     )
 }
 
+//自适应字体大小
 let selfAdaptiveFont = function(sentence){
     const count = 16;
     let fontSize = 16;
