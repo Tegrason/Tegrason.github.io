@@ -24,6 +24,7 @@ let cyclicTitleSentence = function(array){
     let offset = data.index;
     let sentence = array[offset];
     $(".sentence-content").css("font-size",selfAdaptiveFont(sentence)+"px");
+     $(".sentence-content").text(sentence);
     $(".sentence-content").addClass("sentence-content-flash");
     data.index++;
 }
@@ -60,7 +61,7 @@ let acquireResource = function (callback) {
 }
 
 let selfAdaptiveFont = function(sentence){
-    const count = 12;
+    const count = 10;
     let fontSize = 16;
     let container = $(".container");
     let containerWidth = $(container).width();
