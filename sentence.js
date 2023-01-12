@@ -1,10 +1,15 @@
-let sentenceArray = [
-    "三十年众生牛马，六十年诸佛龙象",
-    "人世铜炉，我们在红尘烈火中争渡",
-    "行路难，行路难，难于上青天",
-    "长风破浪会有时 ，直挂云帆济沧海 ！",
-    "有朋自远方来，不亦说乎？"
-]
+let data = {
+    sentenceArray: [
+        "三十年众生牛马，六十年诸佛龙象",
+        "人世铜炉，我们在红尘烈火中争渡",
+        "行路难，行路难，难于上青天",
+        "长风破浪会有时 ，直挂云帆济沧海 ！",
+        "有朋自远方来，不亦说乎？"
+    ],
+    index: 0
+}
+
+
 
 let addLayout = function () {
 
@@ -24,19 +29,19 @@ let addLayout = function () {
     $(selfContainer).css("left",x);
 }
 
-let cyclicTitleSentence = function(array,index){
-    if(index >= array.length){
-        index = 0;
+let cyclicTitleSentence = function(array){
+    if(data.index >= array.length){
+        data.index = 0;
     }
-    let offset = index;
+    let offset = data.index;
     let sentence = array[offset];
     $(".sentence-content").text(sentence);
-    setInterval(function () {
-        cyclicTitleSentence(array,++index);
-    },3000)
+    data.index++;
 }
 
 $(function(){
     addLayout();
-    cyclicTitleSentence(sentenceArray,0);
+    setInterval(function () {
+        cyclicTitleSentence(data.sentenceArray);
+    },6000)
 })
