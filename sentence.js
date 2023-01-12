@@ -23,7 +23,7 @@ let cyclicTitleSentence = function(array){
 
     let offset = data.index;
     let sentence = array[offset];
-    $(".sentence-content").css("font-size",selfAdaptiveFont(sentence));
+    $(".sentence-content").css("font-size",selfAdaptiveFont(sentence)+"px");
     $(".sentence-content").addClass("sentence-content-flash");
     data.index++;
 }
