@@ -65,7 +65,7 @@ let selfAdaptiveFont = function(sentence){
     let container = $(".container");
     let containerWidth = $(container).width();
     let sentenceLength= sentence.length;
-    if(fontSize > count){
+    if(sentenceLength > count){
         fontSize = sentenceLength - (sentenceLength - count);
     }
     console.log(fontSize);
