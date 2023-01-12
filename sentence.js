@@ -20,12 +20,13 @@ let cyclicTitleSentence = function(array){
     if(data.index >= array.length){
         data.index = 0;
     }
+    $(".sentence-content").addClass("sentence-content-flash");
 
     let offset = data.index;
     let sentence = array[offset];
     $(".sentence-content").css("font-size",selfAdaptiveFont(sentence)+"px");
-     $(".sentence-content").text(sentence);
-    $(".sentence-content").addClass("sentence-content-flash");
+    $(".sentence-content").text(sentence);
+    $(".sentence-content").removeClass("sentence-content-flash");
     data.index++;
 }
 
@@ -61,13 +62,13 @@ let acquireResource = function (callback) {
 }
 
 let selfAdaptiveFont = function(sentence){
-    const count = 10;
+    const count = 16;
     let fontSize = 16;
     let container = $(".container");
     let containerWidth = $(container).width();
     let sentenceLength= sentence.length;
     if(sentenceLength > count){
-        fontSize = sentenceLength - (sentenceLength - count);
+        fontSize = sentenceLength - ((sentenceLength - count) * 0.6);
     }
     console.log(fontSize);
     return fontSize;
