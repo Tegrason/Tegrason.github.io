@@ -58,8 +58,8 @@
     }
 }
 .sentence-content-flash {
-    animation: fadeio 2s infinite;
-    -webkit-animation: fadeio 2s infinite;
-    -moz-animation: fadeio 2s infinite;
-    -o-animation: fadeio 2s infinite;
+    animation: fadeio 0.5s infinite;
+    -webkit-animation: fadeio 0.5s infinite;
+    -moz-animation: fadeio 0.5s infinite;
+    -o-animation: fadeio 0.5s infinite;
 }
