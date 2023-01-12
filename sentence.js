@@ -20,11 +20,11 @@ let cyclicTitleSentence = function(array){
     if(data.index >= array.length){
         data.index = 0;
     }
+
     let offset = data.index;
     let sentence = array[offset];
-    $(".sentence-content").text(sentence);
+    $(".sentence-content").css("font-size",selfAdaptiveFont(sentence));
     $(".sentence-content").addClass("sentence-content-flash");
-    $(".sentence-content").removeClass("sentence-content-flash");
     data.index++;
 }
 
@@ -57,6 +57,18 @@ let acquireResource = function (callback) {
         },
         "json"
     )
+}
+
+let selfAdaptiveFont = function(sentence){
+    const count = 12;
+    let fontSize = 16;
+    let container = $(".container");
+    let containerWidth = $(container).width();
+    let sentenceLength= sentence.length;
+    if(fontSize > count){
+        fontSize = sentenceLength - (sentenceLength - count);
+    }
+    return fontSize;
 }
 
 //initialization
