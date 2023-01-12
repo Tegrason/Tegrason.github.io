@@ -9,6 +9,7 @@
     line-height: 50px;
     text-align: center;
 }
+
 @keyframes fadeio {
     /*设置内容由显示变为隐藏*/
     0% {
