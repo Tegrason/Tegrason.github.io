@@ -68,6 +68,7 @@ let selfAdaptiveFont = function(sentence){
     if(fontSize > count){
         fontSize = sentenceLength - (sentenceLength - count);
     }
+    console.log(fontSize);
     return fontSize;
 }
 
