@@ -9,10 +9,10 @@ let addLayout = function () {
     //计算容器位置
     let targetContainer = $("body");
     let selfContainer = $(".container");
+    let selfWidth = $(selfContainer).width();
     let y = $(targetContainer).height();
     let x = $(targetContainer).width();
-    //x = (x - selfContainer) / 2;
-    console.log(x);
+    x = (x - selfWidth) / 2;
     $(selfContainer).css("left",x);
 }
 $(function(){
