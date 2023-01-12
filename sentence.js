@@ -24,12 +24,12 @@ let cyclicTitleSentence = function(array){
     if(data.index >= array.length){
         data.index = 0;
     }
+    $(".sentence-content").addClass("sentence-content-flash");
     let offset = data.index;
     let sentence = array[offset];
-    $(".sentence-content").addClass("sentence-content-flash");
     $(".sentence-content").text(sentence);
-    $(".sentence-content").removeClass("sentence-content-flash");
     data.index++;
+    $(".sentence-content").removeClass("sentence-content-flash");
 }
 
 let resize = function () {
