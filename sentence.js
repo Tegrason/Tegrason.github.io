@@ -21,7 +21,6 @@ let cyclicTitleSentence = function(array){
         data.index = 0;
     }
     $(".sentence-content").addClass("sentence-content-flash");
-
     let offset = data.index;
     let sentence = array[offset];
     $(".sentence-content").css("font-size",selfAdaptiveFont(sentence)+"px");
