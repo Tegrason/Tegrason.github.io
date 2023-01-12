@@ -57,7 +57,7 @@
         opacity: 1;
     }
 }
-.sentence-content {
+.sentence-content-flash {
     animation: fadeio 2s infinite;
     -webkit-animation: fadeio 2s infinite;
     -moz-animation: fadeio 2s infinite;
