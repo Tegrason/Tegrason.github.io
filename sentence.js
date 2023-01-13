@@ -1,7 +1,7 @@
 let data = {
     sentenceArray: [],
     index: 0,
-    uriResource: "https://mrlsongzz.github.io/sentence.json"
+    uriResource: "https://Tegrason.github.io/sentence.json"
 }
 
 
